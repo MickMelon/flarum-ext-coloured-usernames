@@ -8,7 +8,7 @@ This only changes the colour on posts for now. This may be updated in the future
 
 This is a simple edit of [clarkwinkelmann's](https://github.com/clarkwinkelmann) [Color Circles for Groups](https://discuss.flarum.org/d/20544-color-circles-for-groups)
 
-
+![Demonstration of coloured usernames](https://i.imgur.com/gDbOBXX.png)
 
 ## Install or update
 
