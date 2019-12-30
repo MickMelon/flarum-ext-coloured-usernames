@@ -1,6 +1,6 @@
 # Coloured Usernames
 
-[![MIT license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/mickmelon/flarum-ext-coloured-usernames/blob/master/LICENSE.txt) [![Latest Stable Version](https://img.shields.io/packagist/v/mickmelon/flarum-ext-coloured-usernames.svg)](https://packagist.org/packages/clarkwinkelmann/flarum-ext-circle-groups) [![Total Downloads](https://img.shields.io/packagist/dt/mickmelon/flarum-ext-coloured-usernames.svg)](https://packagist.org/packages/mickmelon/flarum-ext-coloured-usernames)
+[![MIT license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/mickmelon/flarum-ext-coloured-usernames/blob/master/LICENSE.txt) [![Latest Stable Version](https://img.shields.io/packagist/v/mickmelon/flarum-ext-coloured-usernames.svg)](https://packagist.org/packages/mickmelon/flarum-ext-coloured-usernames) [![Total Downloads](https://img.shields.io/packagist/dt/mickmelon/flarum-ext-coloured-usernames.svg)](https://packagist.org/packages/mickmelon/flarum-ext-coloured-usernames)
 
 This Flarum extension changes the username colour on posts to the user's first rank. If they have no rank, the default colour will be used.
 
