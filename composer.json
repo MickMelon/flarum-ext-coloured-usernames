@@ -1,0 +1,36 @@
+{
+    "name": "mickmelon/flarum-ext-coloured-usernames",
+    "description": "Set the username colour to the same as the rank colour (only on posts)",
+    "keywords": [
+        "extension",
+        "flarum",
+        "design",
+        "groups"
+    ],
+    "type": "flarum-extension",
+	"version": "0.1.0",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "MickMelon",
+            "homepage": "https://policemp.com/"
+        }
+    ],
+	"support": {
+        "issues": "https://github.com/mickmelon/flarum-ext-coloured-usernames/issues",
+        "source": "https://github.com/mickmelon/flarum-ext-coloured-usernames"
+    },
+    "require": {
+        "flarum/core": "^0.1.0-beta.8"
+    },
+    "extra": {
+        "flarum-extension": {
+            "title": "Coloured Usernames",
+            "icon": {
+                "name": "fas fa-user",
+                "backgroundColor": "#1d70b8",
+                "color": "#fff"
+            }
+        }
+    }
+}
