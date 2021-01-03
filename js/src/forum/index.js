@@ -31,8 +31,8 @@ app.initializers.add('mickmelon-coloured-usernames', () => {
             return node => node && node.attrs && node.attrs.className && node.attrs.className === className;
         };
 
-		    // Set the colour of the username class
-		    // This is the only part that has been changed from clark's repo :)
+        // Set the colour of the username class
+        // This is the only part that has been changed from clark's repo :)
         const avatar = vnode.children.find(matchTag('h3'))
             .children.find(matchTag(Link))
             .children.find(matchClass('username'));
