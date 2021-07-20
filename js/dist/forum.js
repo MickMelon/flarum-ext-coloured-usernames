@@ -1,2 +1,260 @@
-module.exports=function(t){var e={};function r(n){if(e[n])return e[n].exports;var o=e[n]={i:n,l:!1,exports:{}};return t[n].call(o.exports,o,o.exports,r),o.l=!0,o.exports}return r.m=t,r.c=e,r.d=function(t,e,n){r.o(t,e)||Object.defineProperty(t,e,{enumerable:!0,get:n})},r.r=function(t){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(t,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(t,"__esModule",{value:!0})},r.t=function(t,e){if(1&e&&(t=r(t)),8&e)return t;if(4&e&&"object"==typeof t&&t&&t.__esModule)return t;var n=Object.create(null);if(r.r(n),Object.defineProperty(n,"default",{enumerable:!0,value:t}),2&e&&"string"!=typeof t)for(var o in t)r.d(n,o,function(e){return t[e]}.bind(null,o));return n},r.n=function(t){var e=t&&t.__esModule?function(){return t.default}:function(){return t};return r.d(e,"a",e),e},r.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},r.p="",r(r.s=4)}([function(t,e){t.exports=flarum.core.compat.app},function(t,e){t.exports=flarum.core.compat.extend},function(t,e){t.exports=flarum.core.compat["components/PostUser"]},function(t,e){t.exports=flarum.core.compat["components/Link"]},function(t,e,r){"use strict";r.r(e);var n=r(0),o=r.n(n),u=r(1),a=r(2),c=r.n(a),i=r(3),f=r.n(i);o.a.initializers.add("mickmelon-coloured-usernames",(function(){Object(u.extend)(c.a.prototype,"view",(function(t){var e=this.attrs.post.user();if(e){var r=e.groups().find((function(t){return t.color()}));if(r){var n,o=function(t){return function(e){return e&&e.tag&&e.tag===t}},u=t.children.find(o("h3")).children.find(o(f.a)).children.find((n="username",function(t){return t&&t.attrs&&t.attrs.className&&t.attrs.className===n}));u.attrs=u.attrs||{},u.attrs.style=u.attrs.style||{},u.attrs.style.color=r.color()}}}))}))}]);
+module.exports =
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = "./forum.js");
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ "./forum.js":
+/*!******************!*\
+  !*** ./forum.js ***!
+  \******************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _src_forum__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./src/forum */ "./src/forum/index.js");
+/* empty/unused harmony star reexport */
+
+/***/ }),
+
+/***/ "./src/forum/index.js":
+/*!****************************!*\
+  !*** ./src/forum/index.js ***!
+  \****************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var flarum_app__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! flarum/app */ "flarum/app");
+/* harmony import */ var flarum_app__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(flarum_app__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var flarum_extend__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! flarum/extend */ "flarum/extend");
+/* harmony import */ var flarum_extend__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(flarum_extend__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var flarum_components_PostUser__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! flarum/components/PostUser */ "flarum/components/PostUser");
+/* harmony import */ var flarum_components_PostUser__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(flarum_components_PostUser__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var flarum_components_TerminalPost__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! flarum/components/TerminalPost */ "flarum/components/TerminalPost");
+/* harmony import */ var flarum_components_TerminalPost__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(flarum_components_TerminalPost__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var flarum_components_Link__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! flarum/components/Link */ "flarum/components/Link");
+/* harmony import */ var flarum_components_Link__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(flarum_components_Link__WEBPACK_IMPORTED_MODULE_4__);
+
+
+
+
+
+flarum_app__WEBPACK_IMPORTED_MODULE_0___default.a.initializers.add("mickmelon-coloured-usernames", function () {
+  Object(flarum_extend__WEBPACK_IMPORTED_MODULE_1__["extend"])(flarum_components_PostUser__WEBPACK_IMPORTED_MODULE_2___default.a.prototype, "view", function (vnode) {
+    var user = this.attrs.post.user();
+
+    if (!user) {
+      return;
+    }
+
+    var colour = getColour(user);
+
+    if (!colour) {
+      return;
+    } // Set the colour of the username class
+
+
+    var username = vnode.children.find(matchTag("h3")).children.find(matchTag(flarum_components_Link__WEBPACK_IMPORTED_MODULE_4___default.a)).children.find(matchClass("username"));
+
+    if (!username) {
+      return;
+    }
+
+    setUsernameColour(username, colour);
+  });
+  Object(flarum_extend__WEBPACK_IMPORTED_MODULE_1__["extend"])(flarum_components_TerminalPost__WEBPACK_IMPORTED_MODULE_3___default.a.prototype, "view", function (vnode) {
+    var user = this.attrs.discussion.user();
+
+    if (!user) {
+      return;
+    }
+
+    console.log(user);
+    var colour = getColour(user);
+
+    if (!colour) {
+      return;
+    }
+
+    var username = vnode.children[2].children[0];
+
+    if (!username) {
+      return;
+    }
+
+    setUsernameColour(username, colour);
+  });
+});
+
+var getColour = function getColour(user) {
+  // Find the first group that has a color
+  // We don't read badges because we would need to support every badge component and its attrs
+  var colour = user.groups().find(function (group) {
+    return group.color();
+  });
+  return colour;
+};
+
+var matchTag = function matchTag(tag) {
+  return function (node) {
+    return node && node.tag && node.tag === tag;
+  };
+};
+
+var matchClass = function matchClass(className) {
+  return function (node) {
+    return node && node.attrs && node.attrs.className && (node.attrs.className === className || node.attrs.className.includes(className));
+  };
+};
+
+var setUsernameColour = function setUsernameColour(username, colour) {
+  username.attrs = username.attrs || {};
+  username.attrs.style = username.attrs.style || {};
+  username.attrs.style.color = colour.color();
+};
+
+/***/ }),
+
+/***/ "flarum/app":
+/*!********************************************!*\
+  !*** external "flarum.core.compat['app']" ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = flarum.core.compat['app'];
+
+/***/ }),
+
+/***/ "flarum/components/Link":
+/*!********************************************************!*\
+  !*** external "flarum.core.compat['components/Link']" ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = flarum.core.compat['components/Link'];
+
+/***/ }),
+
+/***/ "flarum/components/PostUser":
+/*!************************************************************!*\
+  !*** external "flarum.core.compat['components/PostUser']" ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = flarum.core.compat['components/PostUser'];
+
+/***/ }),
+
+/***/ "flarum/components/TerminalPost":
+/*!****************************************************************!*\
+  !*** external "flarum.core.compat['components/TerminalPost']" ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = flarum.core.compat['components/TerminalPost'];
+
+/***/ }),
+
+/***/ "flarum/extend":
+/*!***********************************************!*\
+  !*** external "flarum.core.compat['extend']" ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = flarum.core.compat['extend'];
+
+/***/ })
+
+/******/ });
 //# sourceMappingURL=forum.js.map

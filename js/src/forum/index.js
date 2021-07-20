@@ -1,44 +1,79 @@
-import app from 'flarum/app';
-import {extend} from 'flarum/extend';
-import PostUser from 'flarum/components/PostUser';
-import Link from 'flarum/components/Link';
+import app from "flarum/app";
+import { extend } from "flarum/extend";
+import PostUser from "flarum/components/PostUser";
+import TerminalPost from "flarum/components/TerminalPost";
+import Link from "flarum/components/Link";
 
-app.initializers.add('mickmelon-coloured-usernames', () => {
-    extend(PostUser.prototype, 'view', function (vnode) {
-        const user = this.attrs.post.user();
+app.initializers.add("mickmelon-coloured-usernames", () => {
+  extend(PostUser.prototype, "view", function (vnode) {
+    const user = this.attrs.post.user();
+    if (!user) {
+      return;
+    }
 
-        // If the post belongs to a deleted user, skip
-        if (!user) {
-            return;
-        }
+    const colour = getColour(user);
+    if (!colour) {
+      return;
+    }
 
-        // Find the first group that has a color
-        // We don't read badges because we would need to support every badge component and its attrs
-        const firstColoredGroup = user.groups().find(group => {
-          return group.color();
-        });
+    // Set the colour of the username class
+    const username = vnode.children
+      .find(matchTag("h3"))
+      .children.find(matchTag(Link))
+      .children.find(matchClass("username"));
+    if (!username) {
+      return;
+    }
 
-        // If there are no color groups, skip
-        if (!firstColoredGroup) {
-            return;
-        }
+    setUsernameColour(username, colour);
+  });
 
-        const matchTag = tag => {
-            return node => node && node.tag && node.tag === tag;
-        };
+  extend(TerminalPost.prototype, "view", function (vnode) {
+    const user = this.attrs.discussion.user();
+    if (!user) {
+      return;
+    }
 
-        const matchClass = className => {
-            return node => node && node.attrs && node.attrs.className && node.attrs.className === className;
-        };
+    console.log(user);
 
-        // Set the colour of the username class
-        // This is the only part that has been changed from clark's repo :)
-        const avatar = vnode.children.find(matchTag('h3'))
-            .children.find(matchTag(Link))
-            .children.find(matchClass('username'));
+    const colour = getColour(user);
+    if (!colour) {
+      return;
+    }
 
-        avatar.attrs = avatar.attrs || {};
-        avatar.attrs.style = avatar.attrs.style || {};
-        avatar.attrs.style.color = firstColoredGroup.color();
-    });
+    const username = vnode.children[2].children[0];
+    if (!username) {
+      return;
+    }
+
+    setUsernameColour(username, colour);
+  });
 });
+
+const getColour = (user) => {
+  // Find the first group that has a color
+  // We don't read badges because we would need to support every badge component and its attrs
+  const colour = user.groups().find((group) => {
+    return group.color();
+  });
+  return colour;
+};
+
+const matchTag = (tag) => {
+  return (node) => node && node.tag && node.tag === tag;
+};
+
+const matchClass = (className) => {
+  return (node) =>
+    node &&
+    node.attrs &&
+    node.attrs.className &&
+    (node.attrs.className === className ||
+      node.attrs.className.includes(className));
+};
+
+const setUsernameColour = (username, colour) => {
+  username.attrs = username.attrs || {};
+  username.attrs.style = username.attrs.style || {};
+  username.attrs.style.color = colour.color();
+};
