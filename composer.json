@@ -8,20 +8,20 @@
         "groups"
     ],
     "type": "flarum-extension",
-	"version": "0.1.1",
     "license": "MIT",
+    "require": {
+        "flarum/core": "^1.2"
+    },
     "authors": [
         {
             "name": "MickMelon",
             "homepage": "https://github.com/mickmelon/"
         }
     ],
-	"support": {
+    "support": {
         "issues": "https://github.com/mickmelon/flarum-ext-coloured-usernames/issues",
-        "source": "https://github.com/mickmelon/flarum-ext-coloured-usernames"
-    },
-    "require": {
-        "flarum/core": "^1.0.4"
+        "source": "https://github.com/mickmelon/flarum-ext-coloured-usernames",
+        "forum": "https://discuss.flarum.org/d/22411"
     },
     "extra": {
         "flarum-extension": {
@@ -30,6 +30,23 @@
                 "name": "fas fa-user",
                 "backgroundColor": "#1d70b8",
                 "color": "#fff"
+            }
+        },
+        "flarum-cli": {
+            "modules": {
+                "admin": false,
+                "forum": true,
+                "js": true,
+                "jsCommon": false,
+                "css": true,
+                "gitConf": true,
+                "githubActions": true,
+                "prettier": true,
+                "typescript": false,
+                "bundlewatch": false,
+                "backendTesting": false,
+                "editorConfig": true,
+                "styleci": true
             }
         }
     }
